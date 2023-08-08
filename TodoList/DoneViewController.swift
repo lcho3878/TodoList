@@ -8,7 +8,8 @@
 import UIKit
 
 class DoneViewController: UIViewController {
-    
+    var count = 0
+    var index = -1
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var DoneView: UITableView!
     override func viewDidLoad() {
@@ -47,6 +48,18 @@ extension DoneViewController : UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if index == indexPath.row {
+            count += 1
+        }
+        else {
+            index = indexPath.row
+        }
+        if count == 5 {
+            count = 0
+            let alert = UIAlertController(title: nil, message: "우와짝짝짝!!!", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "확인", style: .default)
+            alert.addAction(ok)
+            present(alert, animated: true)
+        }
     }
 }

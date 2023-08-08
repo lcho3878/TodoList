@@ -20,6 +20,7 @@ class DetailViewController : UIViewController {
         customTextfield1.text = content
         customTextfield2.text = date
     }
+
     @IBAction func Save(_ sender: Any) {
         let alert = UIAlertController(title: nil, message: "수정하시겠습니까?" , preferredStyle: .alert)
         let confirm = UIAlertAction(title: "확인", style: .default) { (ok) in

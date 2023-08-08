@@ -35,6 +35,10 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         let image = UIImage(named: "swift.png")
         imageView.image = image
+        let alert = UIAlertController(title: nil, message: "숨겨진 이스터에그를 찾아보세요" , preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(ok)
+        present(alert, animated: true)
         // Do any additional setup after loading the view.
     }
     @IBOutlet weak var imageView: UIImageView!
