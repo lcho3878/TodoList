@@ -17,15 +17,17 @@ class DetailViewController : UIViewController {
     @IBOutlet weak var customTextfield2: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        customTextfield1.text = content
-        customTextfield2.text = date
+        customTextfield1.text = todo[index].content
+        customTextfield2.text = todo[index].dueDate
     }
 
     @IBAction func Save(_ sender: Any) {
         let alert = UIAlertController(title: nil, message: "수정하시겠습니까?" , preferredStyle: .alert)
         let confirm = UIAlertAction(title: "확인", style: .default) { (ok) in
-            todoData[self.index] = self.customTextfield1.text!
-            todoDue[self.index] = self.customTextfield2.text!
+//            todoData[self.index] = self.customTextfield1.text!
+//            todoDue[self.index] = self.customTextfield2.text!
+            todo[self.index].content = self.customTextfield1.text!
+            todo[self.index].dueDate = self.customTextfield2.text!
             self.navigationController?.popViewController(animated: true)
         }
         let cancel = UIAlertAction(title: "취소", style: .destructive, handler: nil)

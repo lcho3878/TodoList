@@ -24,13 +24,13 @@ extension String {
     }
 }
 
-var todoData = ["TIL작성", "강의 수강하기", "알고리즘 문제풀기"]
-var todoComplete = [false, false, false]
-var doneData = ["프로젝트 회고록 작성하기", "WIL 작성하기"]
-var todoDue = ["2023-08-06", "2023-08-07", "2023-08-08"]
+//var todoData = ["TIL작성", "강의 수강하기", "알고리즘 문제풀기"]
+//var todoComplete = [false, false, false]
+//var doneData : [String] = []
+//var todoDue = ["2023-08-06", "2023-08-07", "2023-08-08"]
 
 class MainViewController: UIViewController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let image = UIImage(named: "swift.png")

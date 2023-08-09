@@ -54,9 +54,12 @@ class TodoViewController : UIViewController {
             myTextField.placeholder = "목표 날짜를 입력해주세요."
         }
         let confirm = UIAlertAction(title: "확인", style: .default){ (ok) in
-            todoData.append((alert.textFields?[0].text)!)
-            todoComplete.append(false)
-            todoDue.append((alert.textFields?[1].text)!)
+            let content = (alert.textFields?[0].text)!
+            let dueDate = (alert.textFields?[1].text)!
+            todo.append(Todo(content: content, dueDate: dueDate ,isComplete: false))
+//            todoData.append((alert.textFields?[0].text)!)
+//            todoComplete.append(false)
+//            todoDue.append((alert.textFields?[1].text)!)
             self.TodoView.reloadSections(IndexSet(0...0), with: .automatic)
             
         }
@@ -69,7 +72,7 @@ class TodoViewController : UIViewController {
 }
 extension TodoViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return todoData.count
+        return todo.count
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath : IndexPath){
         index = indexPath.row
@@ -80,42 +83,52 @@ extension TodoViewController : UITableViewDelegate, UITableViewDataSource{
         }
         let pass = UIAlertAction(title: "완료목록으로 보내기", style: .default) { [self]
             (pass) in
-            doneData.append(todoData[index])
-            todoData.remove(at: index)
+//            doneData.append(todoData[index])
+//            todoData.remove(at: index)
+//            todoDue.remove(at: index)
+//            todoComplete.remove(at: index)
+            done.append(todo[index])
+            todo.remove(at: index)
             TodoView.reloadSections(IndexSet(0...0), with: .automatic)
         }
         let delete = UIAlertAction(title: "삭제하기", style: .destructive) { [self]
             (delete) in
-            todoData.remove(at: index)
+//            todoData.remove(at: index)
+//            todoDue.remove(at: index)
+//            todoComplete.remove(at: index)
+            todo.remove(at: index)
             TodoView.reloadSections(IndexSet(0...0), with: .automatic)
         }
         let cancel = UIAlertAction(title: "취소", style: .cancel)
         alert.addAction(modify)
-        if todoComplete[index] == true {
+        if todo[index].isComplete == true {
             alert.addAction(pass)
-            
+
         }
         alert.addAction(delete)
         alert.addAction(cancel)
         present(alert, animated: true)
-        //        performSegue(withIdentifier: "TableToDetail", sender: nil)
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TableToDetail" {
             let detailViewController = segue.destination as! DetailViewController
-            detailViewController.content = todoData[index]
+//            detailViewController.content = todoData[index]
             detailViewController.index = index
-            detailViewController.date = todoDue[index]
+//            detailViewController.date = todoDue[index]
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
+        let index = indexPath.row
         cell.customSwitch.addTarget(self, action: #selector(self.toggleSwitch(sender:)), for: .valueChanged)
-        cell.customLable.text = todoData[indexPath.row]
-        cell.dateLabel.text = todoDue[indexPath.row]
-        cell.customSwitch.isOn = todoComplete[indexPath.row]
-        cell.customSwitch.tag = indexPath.row
+//        cell.customLable.text = todoData[indexPath.row]
+//        cell.dateLabel.text = todoDue[indexPath.row]
+//        cell.customSwitch.isOn = todoComplete[indexPath.row]
+        cell.customLable.text = todo[index].content
+        cell.dateLabel.text = todo[index].dueDate
+        cell.customSwitch.isOn = todo[index].isComplete
+        cell.customSwitch.tag = index
         if cell.customSwitch.isOn {
             cell.customLable?.attributedText = cell.customLable.text?.strikeThrough()
             cell.dateLabel?.attributedText = cell.dateLabel.text?.strikeThrough()
@@ -127,11 +140,11 @@ extension TodoViewController : UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     @objc func toggleSwitch (sender : UISwitch) {
-        if todoComplete[sender.tag] == true {
-            todoComplete[sender.tag] = false
+        if todo[sender.tag].isComplete == true {
+            todo[sender.tag].isComplete = false
         }
         else {
-            todoComplete[sender.tag] = true
+            todo[sender.tag].isComplete = true
         }
         TodoView.reloadSections(IndexSet(0...0), with: .automatic)
     }
