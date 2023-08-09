@@ -11,26 +11,7 @@ extension Date{
             dateFormatter.dateFormat = "yyyy-MM-dd"
             dateFormatter.timeZone = TimeZone(identifier: "UTC")
             return dateFormatter.string(from: self)
-        }
-    public func dateCompare(fromDate: Date) -> String {
-            var strDateMessage:String = ""
-            let result:ComparisonResult = self.compare(fromDate)
-            switch result {
-            case .orderedAscending:
-                strDateMessage = "Future"
-                break
-            case .orderedDescending:
-                strDateMessage = "Past"
-                break
-            case .orderedSame:
-                strDateMessage = "Same"
-                break
-            default:
-                strDateMessage = "Error"
-                break
-            }
-            return strDateMessage
-        }
+    }
 }
 
 
@@ -46,27 +27,26 @@ class TodoViewController : UIViewController {
     var index : Int!
     @IBOutlet weak var addButton: UIButton!
     @IBAction func addButtonAction(_ sender: Any) {
-        let alert = UIAlertController(title: "할일 추가하기.", message: nil , preferredStyle: .alert)
-        alert.addTextField{ (myTextField) in
-            myTextField.placeholder = "할일을 입력해주세요."
-        }
-        alert.addTextField{ (myTextField) in
-            myTextField.placeholder = "목표 날짜를 입력해주세요."
-        }
-        let confirm = UIAlertAction(title: "확인", style: .default){ (ok) in
-            let content = (alert.textFields?[0].text)!
-            let dueDate = (alert.textFields?[1].text)!
-            todo.append(Todo(content: content, dueDate: dueDate ,isComplete: false))
-//            todoData.append((alert.textFields?[0].text)!)
-//            todoComplete.append(false)
-//            todoDue.append((alert.textFields?[1].text)!)
-            self.TodoView.reloadSections(IndexSet(0...0), with: .automatic)
-            
-        }
-        let close = UIAlertAction(title: "닫기", style: .destructive, handler: nil)
-        alert.addAction(confirm)
-        alert.addAction(close)
-        present(alert, animated: true, completion: nil)
+//        let alert = UIAlertController(title: "할일 추가하기.", message: nil , preferredStyle: .alert)
+//        alert.addTextField{ (myTextField) in
+//            myTextField.placeholder = "할일을 입력해주세요."
+//        }
+//        alert.addTextField{ (myTextField) in
+//            myTextField.placeholder = "목표 날짜를 입력해주세요."
+//        }
+//        let confirm = UIAlertAction(title: "확인", style: .default){ (ok) in
+//            let content = (alert.textFields?[0].text)!
+//            let dueDate = (alert.textFields?[1].text)!
+//            todo.append(Todo(content: content, dueDate: dueDate ,isComplete: false))
+//            self.TodoView.reloadSections(IndexSet(0...0), with: .automatic)
+//        }
+//        let close = UIAlertAction(title: "닫기", style: .destructive, handler: nil)
+//        alert.addAction(confirm)
+//        alert.addAction(close)
+//        present(alert, animated: true, completion: nil)
+        
+        todoManager.todoAdd(self)
+//        present(alert, animated: true, completion: nil)
     }
     @IBOutlet weak var TodoView: UITableView!
 }
@@ -83,21 +63,11 @@ extension TodoViewController : UITableViewDelegate, UITableViewDataSource{
         }
         let pass = UIAlertAction(title: "완료목록으로 보내기", style: .default) { [self]
             (pass) in
-//            doneData.append(todoData[index])
-//            todoData.remove(at: index)
-//            todoDue.remove(at: index)
-//            todoComplete.remove(at: index)
-            done.append(todo[index])
-            todo.remove(at: index)
-            TodoView.reloadSections(IndexSet(0...0), with: .automatic)
+            todoManager.todoPass(self, index)
         }
         let delete = UIAlertAction(title: "삭제하기", style: .destructive) { [self]
             (delete) in
-//            todoData.remove(at: index)
-//            todoDue.remove(at: index)
-//            todoComplete.remove(at: index)
-            todo.remove(at: index)
-            TodoView.reloadSections(IndexSet(0...0), with: .automatic)
+            todoManager.todoDelete(self, index)
         }
         let cancel = UIAlertAction(title: "취소", style: .cancel)
         alert.addAction(modify)
@@ -113,18 +83,13 @@ extension TodoViewController : UITableViewDelegate, UITableViewDataSource{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TableToDetail" {
             let detailViewController = segue.destination as! DetailViewController
-//            detailViewController.content = todoData[index]
             detailViewController.index = index
-//            detailViewController.date = todoDue[index]
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
         let index = indexPath.row
         cell.customSwitch.addTarget(self, action: #selector(self.toggleSwitch(sender:)), for: .valueChanged)
-//        cell.customLable.text = todoData[indexPath.row]
-//        cell.dateLabel.text = todoDue[indexPath.row]
-//        cell.customSwitch.isOn = todoComplete[indexPath.row]
         cell.customLable.text = todo[index].content
         cell.dateLabel.text = todo[index].dueDate
         cell.customSwitch.isOn = todo[index].isComplete
@@ -140,11 +105,13 @@ extension TodoViewController : UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     @objc func toggleSwitch (sender : UISwitch) {
-        if todo[sender.tag].isComplete == true {
-            todo[sender.tag].isComplete = false
+        let index = sender.tag
+        if todo[index].isComplete == false {
+            todo[index].isComplete = true
         }
         else {
-            todo[sender.tag].isComplete = true
+            done.append(todo[index])
+            todo.remove(at: index)
         }
         TodoView.reloadSections(IndexSet(0...0), with: .automatic)
     }

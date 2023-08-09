@@ -24,11 +24,6 @@ extension String {
     }
 }
 
-//var todoData = ["TIL작성", "강의 수강하기", "알고리즘 문제풀기"]
-//var todoComplete = [false, false, false]
-//var doneData : [String] = []
-//var todoDue = ["2023-08-06", "2023-08-07", "2023-08-08"]
-
 class MainViewController: UIViewController {
 
     override func viewDidLoad() {

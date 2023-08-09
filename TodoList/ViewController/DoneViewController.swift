@@ -21,7 +21,6 @@ class DoneViewController: UIViewController {
             let alert = UIAlertController(title: done[index].content, message: "삭제하시겠습니까?", preferredStyle: .alert)
             let ok = UIAlertAction(title: "삭제", style: .destructive){
                 (ok) in
-//                doneData.remove(at: index)
                 done.remove(at: index)
                 self.DoneView.reloadSections(IndexSet(0...0), with: .automatic)
             }
