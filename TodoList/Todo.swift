@@ -14,10 +14,14 @@ class Todo {
     var content : String
     var dueDate : String?
     var isComplete : Bool
-    init(content: String, dueDate: String? = nil, isComplete: Bool) {
+    var completeDate : String?
+    var inDuedate : Bool?
+    init(content: String, dueDate: String? = nil, isComplete: Bool, inDuedate : Bool? = nil, completeDate : String? = nil) {
         self.content = content
-        self.dueDate = dueDate
         self.isComplete = isComplete
+        self.dueDate = dueDate
+        self.inDuedate = inDuedate
+        self.completeDate = completeDate
     }
 }
 let todoManager = TodoManager()
@@ -51,4 +55,15 @@ class TodoManager {
         tableViewController.TodoView.reloadSections(IndexSet(0...0), with: .automatic)
     }
 }
-
+class Score {
+    var score = 0
+    init(score: Int = 0) {
+        var sum = 0
+        for i in 0..<done.count {
+            if done[i].inDuedate == true {
+                sum += 1
+            }
+        }
+        self.score = sum
+    }
+}

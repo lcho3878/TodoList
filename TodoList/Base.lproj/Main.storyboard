@@ -35,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikh-tQ-TcW">
-                                <rect key="frame" x="112" y="542" width="169" height="51"/>
+                                <rect key="frame" x="112" y="497" width="169" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="해야할 일 보기"/>
@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvX-Ze-5qL">
-                                <rect key="frame" x="112" y="659" width="169" height="49"/>
+                                <rect key="frame" x="112" y="568" width="169" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="완료한 일 보기"/>
@@ -56,6 +56,24 @@
                                 <rect key="frame" x="35" y="115" width="322" height="358"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yw-Z8-ASz">
+                                <rect key="frame" x="112" y="643" width="169" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="내 점수 확인하기"/>
+                                <connections>
+                                    <action selector="scoreButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MhN-2M-kzD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Swg-rv-tVh">
+                                <rect key="frame" x="112" y="717" width="169" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <segue destination="yJR-8T-MxP" kind="show" id="4lJ-V2-MLN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -146,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bEh-rQ-M7K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="243.51145038167937" y="-300"/>
+            <point key="canvasLocation" x="244" y="-539"/>
         </scene>
         <!--상세화면-->
         <scene sceneID="Hwu-Yb-qsE">
@@ -208,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xKa-6X-YaY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072.5190839694656" y="-300"/>
+            <point key="canvasLocation" x="1037" y="-539"/>
         </scene>
         <!--Done View Controller-->
         <scene sceneID="y6B-Sx-hnV">
@@ -275,7 +293,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BGV-f1-UiR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="243.51145038167937" y="360.56338028169017"/>
+            <point key="canvasLocation" x="244" y="137"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gqC-I2-aye">
+            <objects>
+                <viewController id="yJR-8T-MxP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lEZ-VD-032">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="3Uy-Ps-bRM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DBn-gc-6e5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hfD-uu-UkH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="249" y="801"/>
         </scene>
     </scenes>
     <resources>

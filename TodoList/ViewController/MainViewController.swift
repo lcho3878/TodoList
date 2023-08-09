@@ -38,5 +38,12 @@ class MainViewController: UIViewController {
     }
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBAction func scoreButton(_ sender: Any) {
+        let score = Score()
+        let alert = UIAlertController(title: nil, message: "점수는 \(score.score)점 입니다.", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(ok)
+        present(alert, animated: true)
+    }
 }
 

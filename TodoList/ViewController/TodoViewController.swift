@@ -108,10 +108,20 @@ extension TodoViewController : UITableViewDelegate, UITableViewDataSource{
         let index = sender.tag
         if todo[index].isComplete == false {
             todo[index].isComplete = true
+            todo[index].completeDate = Date().toString()
         }
         else {
+            if todo[index].dueDate! != "" {
+                if todo[index].dueDate! > todo[index].completeDate! {
+                    todo[index].inDuedate = true
+                }
+                else {
+                    todo[index].inDuedate = false
+                }
+            }
             done.append(todo[index])
             todo.remove(at: index)
+            //이제 DoneView로 넘어간뒤 점수 만들고 점수 합계 구하기 하면됨
         }
         TodoView.reloadSections(IndexSet(0...0), with: .automatic)
     }
