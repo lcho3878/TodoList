@@ -23,30 +23,34 @@ class TodoViewController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         TodoView.reloadSections(IndexSet(0...0), with: .automatic)
     }
-    
+    var alert = UIAlertController(title: "New Todo", message: nil, preferredStyle: .alert)
     var index : Int!
+    @objc func dateChange (_ sender : UIDatePicker) {
+        
+    }
     @IBOutlet weak var addButton: UIButton!
     @IBAction func addButtonAction(_ sender: Any) {
-//        let alert = UIAlertController(title: "할일 추가하기.", message: nil , preferredStyle: .alert)
+//        let alert = UIAlertController(title: "New Todo", message: nil, preferredStyle: .alert)
+//        let datepicker = UIDatePicker()
+//        datepicker.datePickerMode = .date
+//        datepicker.preferredDatePickerStyle = .wheels
+//        datepicker.addTarget(self, action: #selector(dateChange), for: .valueChanged)
 //        alert.addTextField{ (myTextField) in
-//            myTextField.placeholder = "할일을 입력해주세요."
+//            myTextField.placeholder = "할일을 입력해주세요"
 //        }
 //        alert.addTextField{ (myTextField) in
-//            myTextField.placeholder = "목표 날짜를 입력해주세요."
+//            myTextField.placeholder = "목표 기간을 입력해주세요"
+//            myTextField.inputView = datepicker
+//            myTextField.text = datepicker.date.toString()
 //        }
-//        let confirm = UIAlertAction(title: "확인", style: .default){ (ok) in
-//            let content = (alert.textFields?[0].text)!
-//            let dueDate = (alert.textFields?[1].text)!
-//            todo.append(Todo(content: content, dueDate: dueDate ,isComplete: false))
-//            self.TodoView.reloadSections(IndexSet(0...0), with: .automatic)
-//        }
-//        let close = UIAlertAction(title: "닫기", style: .destructive, handler: nil)
-//        alert.addAction(confirm)
-//        alert.addAction(close)
-//        present(alert, animated: true, completion: nil)
+//
+//        let ok = UIAlertAction(title: "확인", style: .default)
+//        let cancel = UIAlertAction(title: "취소", style: .destructive)
+//        alert.addAction(ok)
+//        alert.addAction(cancel)
+//        present(alert, animated: true)
+        //        todoManager.todoAdd(self, datepicker)
         
-        todoManager.todoAdd(self)
-//        present(alert, animated: true, completion: nil)
     }
     @IBOutlet weak var TodoView: UITableView!
 }
@@ -61,20 +65,20 @@ extension TodoViewController : UITableViewDelegate, UITableViewDataSource{
             (modify) in
             performSegue(withIdentifier: "TableToDetail", sender: self)
         }
-        let pass = UIAlertAction(title: "완료목록으로 보내기", style: .default) { [self]
-            (pass) in
-            todoManager.todoPass(self, index)
-        }
+//        let pass = UIAlertAction(title: "완료목록으로 보내기", style: .default) { [self]
+//            (pass) in
+//            todoManager.todoPass(self, index)
+//        }
         let delete = UIAlertAction(title: "삭제하기", style: .destructive) { [self]
             (delete) in
             todoManager.todoDelete(self, index)
         }
         let cancel = UIAlertAction(title: "취소", style: .cancel)
         alert.addAction(modify)
-        if todo[index].isComplete == true {
-            alert.addAction(pass)
-
-        }
+//        if todo[index].isComplete == true {
+//            alert.addAction(pass)
+//
+//        }
         alert.addAction(delete)
         alert.addAction(cancel)
         present(alert, animated: true)
@@ -112,7 +116,7 @@ extension TodoViewController : UITableViewDelegate, UITableViewDataSource{
         }
         else {
             if todo[index].dueDate! != "" {
-                if todo[index].dueDate! > todo[index].completeDate! {
+                if todo[index].dueDate! >= todo[index].completeDate! {
                     todo[index].inDuedate = true
                 }
                 else {

@@ -19,6 +19,15 @@ class DetailViewController : UIViewController {
         super.viewDidLoad()
         customTextfield1.text = todo[index].content
         customTextfield2.text = todo[index].dueDate
+        let datepicker = UIDatePicker()
+        datepicker.datePickerMode = .date
+        datepicker.preferredDatePickerStyle = .wheels
+        datepicker.addTarget(self, action: #selector(dateChange), for: .valueChanged)
+        customTextfield2.inputView = datepicker
+        
+    }
+    @objc func dateChange (_ sender : UIDatePicker) {
+        customTextfield2.text = sender.date.toString()
     }
 
     @IBAction func Save(_ sender: Any) {

@@ -26,12 +26,13 @@ class Todo {
 }
 let todoManager = TodoManager()
 class TodoManager {
-    func todoAdd (_ tableViewController: TodoViewController) {
+     
+    func todoAdd (_ tableViewController: TodoViewController, _ datepicker : UIDatePicker) {
         let alert = UIAlertController(title: "할일 추가하기.", message: nil , preferredStyle: .alert)
         alert.addTextField{ (myTextField) in
             myTextField.placeholder = "할일을 입력해주세요."
         }
-        alert.addTextField{ (myTextField) in
+        alert.addTextField{(myTextField) in
             myTextField.placeholder = "목표 날짜를 입력해주세요."
         }
         let confirm = UIAlertAction(title: "확인", style: .default){ (ok) in
