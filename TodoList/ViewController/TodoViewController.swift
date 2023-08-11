@@ -5,16 +5,6 @@
 //  Created by t2023-m079 on 2023/08/03.
 //
 import UIKit
-extension Date{
-    func toString() -> String {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            dateFormatter.timeZone = TimeZone(identifier: "UTC")
-            return dateFormatter.string(from: self)
-    }
-}
-
-
 
 class TodoViewController : UIViewController {
     override func viewDidLoad() {
@@ -26,30 +16,6 @@ class TodoViewController : UIViewController {
     var alert = UIAlertController(title: "New Todo", message: nil, preferredStyle: .alert)
     var index : Int!
     @objc func dateChange (_ sender : UIDatePicker) {
-        
-    }
-    @IBOutlet weak var addButton: UIButton!
-    @IBAction func addButtonAction(_ sender: Any) {
-//        let alert = UIAlertController(title: "New Todo", message: nil, preferredStyle: .alert)
-//        let datepicker = UIDatePicker()
-//        datepicker.datePickerMode = .date
-//        datepicker.preferredDatePickerStyle = .wheels
-//        datepicker.addTarget(self, action: #selector(dateChange), for: .valueChanged)
-//        alert.addTextField{ (myTextField) in
-//            myTextField.placeholder = "할일을 입력해주세요"
-//        }
-//        alert.addTextField{ (myTextField) in
-//            myTextField.placeholder = "목표 기간을 입력해주세요"
-//            myTextField.inputView = datepicker
-//            myTextField.text = datepicker.date.toString()
-//        }
-//
-//        let ok = UIAlertAction(title: "확인", style: .default)
-//        let cancel = UIAlertAction(title: "취소", style: .destructive)
-//        alert.addAction(ok)
-//        alert.addAction(cancel)
-//        present(alert, animated: true)
-        //        todoManager.todoAdd(self, datepicker)
         
     }
     @IBOutlet weak var TodoView: UITableView!
@@ -65,20 +31,12 @@ extension TodoViewController : UITableViewDelegate, UITableViewDataSource{
             (modify) in
             performSegue(withIdentifier: "TableToDetail", sender: self)
         }
-//        let pass = UIAlertAction(title: "완료목록으로 보내기", style: .default) { [self]
-//            (pass) in
-//            todoManager.todoPass(self, index)
-//        }
         let delete = UIAlertAction(title: "삭제하기", style: .destructive) { [self]
             (delete) in
             todoManager.todoDelete(self, index)
         }
         let cancel = UIAlertAction(title: "취소", style: .cancel)
         alert.addAction(modify)
-//        if todo[index].isComplete == true {
-//            alert.addAction(pass)
-//
-//        }
         alert.addAction(delete)
         alert.addAction(cancel)
         present(alert, animated: true)
@@ -90,9 +48,7 @@ extension TodoViewController : UITableViewDelegate, UITableViewDataSource{
             detailViewController.index = index
         }
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
-        let index = indexPath.row
+    fileprivate func extractedFunc(_ cell: CustomTableViewCell, _ index: Int) {
         cell.customSwitch.addTarget(self, action: #selector(self.toggleSwitch(sender:)), for: .valueChanged)
         cell.customLable.text = todo[index].content
         cell.dateLabel.text = todo[index].dueDate
@@ -106,6 +62,12 @@ extension TodoViewController : UITableViewDelegate, UITableViewDataSource{
         if today.toString() > cell.dateLabel.text! {
             cell.dateLabel.textColor = .red
         }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
+        let index = indexPath.row
+        extractedFunc(cell, index)
         return cell
     }
     @objc func toggleSwitch (sender : UISwitch) {

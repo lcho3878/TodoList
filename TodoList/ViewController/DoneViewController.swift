@@ -44,9 +44,7 @@ extension DoneViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
-//        cell.customLable.text = doneData[indexPath.row]
         cell.customLable.text = done[indexPath.row].content
-//        cell.customLable.text = done[indexPath.row].completeDate
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -58,7 +56,7 @@ extension DoneViewController : UITableViewDelegate, UITableViewDataSource {
         }
         if count == 5 {
             count = 0
-            let alert = UIAlertController(title: nil, message: "우와짝짝짝!!!", preferredStyle: .alert)
+            let alert = UIAlertController(title: nil, message: "이스터에그발견!!!", preferredStyle: .alert)
             let ok = UIAlertAction(title: "확인", style: .default)
             alert.addAction(ok)
             present(alert, animated: true)

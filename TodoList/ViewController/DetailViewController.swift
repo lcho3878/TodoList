@@ -33,8 +33,6 @@ class DetailViewController : UIViewController {
     @IBAction func Save(_ sender: Any) {
         let alert = UIAlertController(title: nil, message: "수정하시겠습니까?" , preferredStyle: .alert)
         let confirm = UIAlertAction(title: "확인", style: .default) { (ok) in
-//            todoData[self.index] = self.customTextfield1.text!
-//            todoDue[self.index] = self.customTextfield2.text!
             todo[self.index].content = self.customTextfield1.text!
             todo[self.index].dueDate = self.customTextfield2.text!
             self.navigationController?.popViewController(animated: true)
