@@ -7,23 +7,23 @@
 import UIKit
 
 class TodoViewController : UIViewController {
+    var index : Int!
+    @IBOutlet weak var TodoView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         TodoView.reloadSections(IndexSet(0...0), with: .automatic)
     }
-    var alert = UIAlertController(title: "New Todo", message: nil, preferredStyle: .alert)
-    var index : Int!
-    @objc func dateChange (_ sender : UIDatePicker) {
-        
-    }
-    @IBOutlet weak var TodoView: UITableView!
+    
 }
 extension TodoViewController : UITableViewDelegate, UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todo.count
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath : IndexPath){
         index = indexPath.row
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -34,6 +34,7 @@ extension TodoViewController : UITableViewDelegate, UITableViewDataSource{
         let delete = UIAlertAction(title: "삭제하기", style: .destructive) { [self]
             (delete) in
             todoManager.todoDelete(self, index)
+            SaveData()
         }
         let cancel = UIAlertAction(title: "취소", style: .cancel)
         alert.addAction(modify)
@@ -42,23 +43,28 @@ extension TodoViewController : UITableViewDelegate, UITableViewDataSource{
         present(alert, animated: true)
         
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TableToDetail" {
             let detailViewController = segue.destination as! DetailViewController
             detailViewController.index = index
         }
     }
+    
     fileprivate func extractedFunc(_ cell: CustomTableViewCell, _ index: Int) {
         cell.customSwitch.addTarget(self, action: #selector(self.toggleSwitch(sender:)), for: .valueChanged)
         cell.customLable.text = todo[index].content
         cell.dateLabel.text = todo[index].dueDate
         cell.customSwitch.isOn = todo[index].isComplete
         cell.customSwitch.tag = index
+        
         if cell.customSwitch.isOn {
             cell.customLable?.attributedText = cell.customLable.text?.strikeThrough()
             cell.dateLabel?.attributedText = cell.dateLabel.text?.strikeThrough()
         }
+        
         let today = Date()
+        
         if today.toString() > cell.dateLabel.text! {
             cell.dateLabel.textColor = .red
         }
@@ -70,6 +76,7 @@ extension TodoViewController : UITableViewDelegate, UITableViewDataSource{
         extractedFunc(cell, index)
         return cell
     }
+    
     @objc func toggleSwitch (sender : UISwitch) {
         let index = sender.tag
         if todo[index].isComplete == false {
@@ -89,7 +96,9 @@ extension TodoViewController : UITableViewDelegate, UITableViewDataSource{
             todo.remove(at: index)
             //이제 DoneView로 넘어간뒤 점수 만들고 점수 합계 구하기 하면됨
         }
+        SaveData()
         TodoView.reloadSections(IndexSet(0...0), with: .automatic)
     }
+    
 }
 

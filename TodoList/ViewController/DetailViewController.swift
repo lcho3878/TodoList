@@ -15,6 +15,7 @@ class DetailViewController : UIViewController {
     @IBOutlet var DetailView: UIView!
     @IBOutlet weak var customTextfield1: UITextField!
     @IBOutlet weak var customTextfield2: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         customTextfield1.text = todo[index].content
@@ -26,6 +27,7 @@ class DetailViewController : UIViewController {
         customTextfield2.inputView = datepicker
         
     }
+    
     @objc func dateChange (_ sender : UIDatePicker) {
         customTextfield2.text = sender.date.toString()
     }
@@ -35,6 +37,7 @@ class DetailViewController : UIViewController {
         let confirm = UIAlertAction(title: "확인", style: .default) { (ok) in
             todo[self.index].content = self.customTextfield1.text!
             todo[self.index].dueDate = self.customTextfield2.text!
+            SaveData()
             self.navigationController?.popViewController(animated: true)
         }
         let cancel = UIAlertAction(title: "취소", style: .destructive, handler: nil)
@@ -42,4 +45,5 @@ class DetailViewController : UIViewController {
         alert.addAction(cancel)
         present(alert, animated: true, completion: nil)
     }
+    
 }

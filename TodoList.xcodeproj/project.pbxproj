@@ -79,6 +79,7 @@
 				154774AB2A80DB7400D54393 /* DetailViewController.swift */,
 				15A133F22A839D540085811D /* InstructionViewController.swift */,
 				15A133F42A84F2AB0085811D /* AddViewController.swift */,
+				15EFCADD2A79EAED00CF729D /* CustomTableViewCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -124,7 +125,6 @@
 				15F204462A77C1F4001E9D58 /* AppDelegate.swift */,
 				15F204482A77C1F4001E9D58 /* SceneDelegate.swift */,
 				15A134032A85B9900085811D /* Instances.swift */,
-				15EFCADD2A79EAED00CF729D /* CustomTableViewCell.swift */,
 				15A134052A85BAD00085811D /* Class */,
 				15A133FA2A85B86F0085811D /* Extension */,
 				15A133F12A835E110085811D /* ViewController */,

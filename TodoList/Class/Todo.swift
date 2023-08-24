@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Todo {
+class Todo : Codable {
     var content : String
     var dueDate : String?
     var isComplete : Bool

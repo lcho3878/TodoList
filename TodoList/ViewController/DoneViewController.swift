@@ -12,9 +12,7 @@ class DoneViewController: UIViewController {
     var index = -1
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var DoneView: UITableView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    
     @IBAction func deleteAction(_ sender: Any) {
         let index = DoneView.indexPathForSelectedRow?.row ?? -1
         if index != -1 {
@@ -22,6 +20,7 @@ class DoneViewController: UIViewController {
             let ok = UIAlertAction(title: "삭제", style: .destructive){
                 (ok) in
                 done.remove(at: index)
+                SaveData()
                 self.DoneView.reloadSections(IndexSet(0...0), with: .automatic)
             }
             let cancel = UIAlertAction(title: "취소", style: .default)
@@ -36,8 +35,14 @@ class DoneViewController: UIViewController {
             present(alert, animated: true)
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
 }
 extension DoneViewController : UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return done.count
     }
@@ -47,6 +52,7 @@ extension DoneViewController : UITableViewDelegate, UITableViewDataSource {
         cell.customLable.text = done[indexPath.row].content
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if index == indexPath.row {
             count += 1
@@ -62,4 +68,5 @@ extension DoneViewController : UITableViewDelegate, UITableViewDataSource {
             present(alert, animated: true)
         }
     }
+    
 }
