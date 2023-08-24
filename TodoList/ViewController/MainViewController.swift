@@ -5,6 +5,7 @@
 //  Created by t2023-m079 on 2023/07/31.
 //
 
+import Alamofire
 import UIKit
 
 
@@ -20,8 +21,20 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         LoadData()
-        let image = UIImage(named: "swift.png")
-        imageView.image = image
+        let imageUrl = "https://spartacodingclub.kr/css/images/scc-og.jpg"
+        
+        
+        AF.request(imageUrl).response { response in
+            switch response.result {
+            case .success(let data):
+                DispatchQueue.main.async{
+                    self.imageView.image = UIImage(data: data!)
+                }
+            case .failure(let error):
+                print("이미지 로드 실패 : \(error)")
+            }
+        }
+        
     }
     
 }
