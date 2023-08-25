@@ -64,6 +64,7 @@ class AddViewController: UIViewController {
         datepicker.datePickerMode = .date
         datepicker.preferredDatePickerStyle = .wheels
         datepicker.addTarget(self, action: #selector(dateChange), for: .valueChanged)
+        customLable2.text = Date().toString()
         customLable2.inputView = datepicker
         SetupCategoryMenu()
     }

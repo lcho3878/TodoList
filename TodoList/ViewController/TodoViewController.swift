@@ -15,6 +15,9 @@ class TodoViewController : UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        for i in 0..<todo.count{
+            todo[i].sort()
+        }
         TodoView.reloadSections(IndexSet(0...3), with: .automatic)
     }
     

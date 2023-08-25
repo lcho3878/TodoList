@@ -25,7 +25,11 @@ class Todo : Codable {
     }
 }
 
-extension Todo: Equatable {
+extension Todo: Equatable, Comparable {
+    static func < (lhs: Todo, rhs: Todo) -> Bool {
+        return lhs.dueDate! < rhs.dueDate!
+    }
+    
     static func == (lhs: Todo, rhs: Todo) -> Bool {
         return lhs.category == rhs.category && lhs.content == rhs.content && lhs.dueDate == rhs.dueDate
     }
