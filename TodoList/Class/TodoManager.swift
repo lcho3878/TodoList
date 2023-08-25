@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 class TodoManager {
      
+    //todoAdd는 현재 안쓰임
     func todoAdd (_ tableViewController: TodoViewController, _ datepicker : UIDatePicker) {
         let alert = UIAlertController(title: "할일 추가하기.", message: nil , preferredStyle: .alert)
         alert.addTextField{ (myTextField) in
@@ -20,7 +21,7 @@ class TodoManager {
         let confirm = UIAlertAction(title: "확인", style: .default){ (ok) in
             let content = (alert.textFields?[0].text)!
             let dueDate = (alert.textFields?[1].text)!
-            todo.append(Todo(content: content, dueDate: dueDate ,isComplete: false))
+            todo_delete.append(Todo(category: "공부", content: content, dueDate: dueDate ,isComplete: false))
             tableViewController.TodoView.reloadSections(IndexSet(0...0), with: .automatic)
         }
         let close = UIAlertAction(title: "닫기", style: .destructive, handler: nil)
@@ -29,12 +30,12 @@ class TodoManager {
         tableViewController.present(alert, animated: true, completion: nil)
     }
     func todoPass (_ tableViewController: TodoViewController, _ index : Int) {
-        done.append(todo[index])
-        todo.remove(at: index)
+        done.append(todo_delete[index])
+        todo_delete.remove(at: index)
         tableViewController.TodoView.reloadSections(IndexSet(0...0), with: .automatic)
     }
     func todoDelete (_ tableViewController: TodoViewController, _ index : Int) {
-        todo.remove(at: index)
+        todo_delete.remove(at: index)
         tableViewController.TodoView.reloadSections(IndexSet(0...0), with: .automatic)
     }
 }

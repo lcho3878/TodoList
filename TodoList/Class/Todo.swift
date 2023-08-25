@@ -9,12 +9,14 @@ import Foundation
 import UIKit
 
 class Todo : Codable {
+    var category: String
     var content : String
     var dueDate : String?
     var isComplete : Bool
     var completeDate : String?
     var inDuedate : Bool?
-    init(content: String, dueDate: String? = nil, isComplete: Bool, inDuedate : Bool? = nil, completeDate : String? = nil) {
+    init(category: String, content: String, dueDate: String? = nil, isComplete: Bool, inDuedate : Bool? = nil, completeDate : String? = nil) {
+        self.category = category
         self.content = content
         self.isComplete = isComplete
         self.dueDate = dueDate
@@ -22,3 +24,13 @@ class Todo : Codable {
         self.completeDate = completeDate
     }
 }
+
+extension Todo: Equatable {
+    static func == (lhs: Todo, rhs: Todo) -> Bool {
+        return lhs.category == rhs.category && lhs.content == rhs.content && lhs.dueDate == rhs.dueDate
+    }
+    
+    
+}
+
+

@@ -28,4 +28,43 @@ class CustomTableViewCell: UITableViewCell {
         dateLabel.attributedText = nil
         dateLabel.textColor = .black
     }
+    
+    func setupUI (_ celltodo: Todo) {
+        customLable.text = celltodo.content
+        dateLabel.text = celltodo.dueDate
+        customSwitch.isOn = celltodo.isComplete
+        customSwitch.addTarget(self, action: #selector(toggleSwitch), for: .valueChanged)
+        
+        if customSwitch.isOn {
+            customLable?.attributedText = customLable.text?.strikeThrough()
+            dateLabel?.attributedText = dateLabel.text?.strikeThrough()
+        }
+        
+        let today = Date()
+        
+        if today.toString() > dateLabel?.text ?? "" {
+            dateLabel.textColor = .red
+        }
+    }
+    
+    @objc func toggleSwitch (_ sender: UISwitch) {
+        let index = self.tag
+        let section = sender.tag
+        if todo[section][index].isComplete == false {
+            todo[section][index].isComplete = true
+            todo[section][index].completeDate = Date().toString()
+        }
+        else {
+            if todo[section][index].dueDate! != "" {
+                if todo[section][index].dueDate! >= todo[section][index].completeDate! {
+                    todo[section][index].inDuedate = true
+                }
+                else {
+                    todo[section][index].inDuedate = false
+                }
+            }
+            done.append(todo[section][index])
+            todo[section].remove(at: index)
+        }
+    }
 }

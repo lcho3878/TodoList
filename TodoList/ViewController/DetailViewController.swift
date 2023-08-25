@@ -9,6 +9,7 @@ import UIKit
 
 class DetailViewController : UIViewController {
     var content : String!
+    var section: Int!
     var index : Int!
     var date : String!
     @IBOutlet weak var saveButton: UIButton!
@@ -18,8 +19,8 @@ class DetailViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        customTextfield1.text = todo[index].content
-        customTextfield2.text = todo[index].dueDate
+        customTextfield1.text = todo[section][index].content
+        customTextfield2.text = todo[section][index].dueDate
         let datepicker = UIDatePicker()
         datepicker.datePickerMode = .date
         datepicker.preferredDatePickerStyle = .wheels
@@ -35,9 +36,8 @@ class DetailViewController : UIViewController {
     @IBAction func Save(_ sender: Any) {
         let alert = UIAlertController(title: nil, message: "수정하시겠습니까?" , preferredStyle: .alert)
         let confirm = UIAlertAction(title: "확인", style: .default) { (ok) in
-            todo[self.index].content = self.customTextfield1.text!
-            todo[self.index].dueDate = self.customTextfield2.text!
-            SaveData()
+            todo[self.section][self.index].content = self.customTextfield1.text!
+            todo[self.section][self.index].dueDate = self.customTextfield2.text!
             self.navigationController?.popViewController(animated: true)
         }
         let cancel = UIAlertAction(title: "취소", style: .destructive, handler: nil)

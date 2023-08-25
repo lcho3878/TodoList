@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1525F6782A809123005FCCC0 /* swift.png in Resources */ = {isa = PBXBuildFile; fileRef = 1525F6772A809123005FCCC0 /* swift.png */; };
 		154774AC2A80DB7400D54393 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154774AB2A80DB7400D54393 /* DetailViewController.swift */; };
 		15A133F02A835DFB0085811D /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A133EF2A835DFB0085811D /* Todo.swift */; };
 		15A133F32A839D540085811D /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A133F22A839D540085811D /* InstructionViewController.swift */; };
 		15A133F52A84F2AB0085811D /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A133F42A84F2AB0085811D /* AddViewController.swift */; };
-		15A133F72A84F9110085811D /* instruction.png in Resources */ = {isa = PBXBuildFile; fileRef = 15A133F62A84F9110085811D /* instruction.png */; };
-		15A133F92A84FA0C0085811D /* memo.webp in Resources */ = {isa = PBXBuildFile; fileRef = 15A133F82A84FA0C0085811D /* memo.webp */; };
 		15A133FC2A85B8900085811D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A133FB2A85B8900085811D /* String.swift */; };
 		15A133FE2A85B8AC0085811D /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A133FD2A85B8AC0085811D /* Date.swift */; };
 		15A134002A85B94F0085811D /* TodoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A133FF2A85B94F0085811D /* TodoManager.swift */; };
@@ -32,13 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1525F6772A809123005FCCC0 /* swift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swift.png; sourceTree = "<group>"; };
 		154774AB2A80DB7400D54393 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		15A133EF2A835DFB0085811D /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		15A133F22A839D540085811D /* InstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		15A133F42A84F2AB0085811D /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		15A133F62A84F9110085811D /* instruction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = instruction.png; sourceTree = "<group>"; };
-		15A133F82A84FA0C0085811D /* memo.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = memo.webp; sourceTree = "<group>"; };
 		15A133FB2A85B8900085811D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		15A133FD2A85B8AC0085811D /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		15A133FF2A85B94F0085811D /* TodoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoManager.swift; sourceTree = "<group>"; };
@@ -72,9 +66,6 @@
 		15A133F12A835E110085811D /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1525F6772A809123005FCCC0 /* swift.png */,
-				15A133F62A84F9110085811D /* instruction.png */,
-				15A133F82A84FA0C0085811D /* memo.webp */,
 				15F2044A2A77C1F4001E9D58 /* MainViewController.swift */,
 				15EFCAE12A7B869E00CF729D /* TodoViewController.swift */,
 				15EFCAE52A7B883200CF729D /* DoneViewController.swift */,
@@ -203,11 +194,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				15F204532A77C1F5001E9D58 /* LaunchScreen.storyboard in Resources */,
-				1525F6782A809123005FCCC0 /* swift.png in Resources */,
 				15F204502A77C1F5001E9D58 /* Assets.xcassets in Resources */,
-				15A133F92A84FA0C0085811D /* memo.webp in Resources */,
 				15F2044E2A77C1F4001E9D58 /* Main.storyboard in Resources */,
-				15A133F72A84F9110085811D /* instruction.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
