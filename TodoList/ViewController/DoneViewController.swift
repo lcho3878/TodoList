@@ -50,6 +50,7 @@ extension DoneViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
         cell.customLable.text = done[indexPath.row].content
+        cell.categoryLabel.text = done[indexPath.row].category
         return cell
     }
     

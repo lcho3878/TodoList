@@ -16,7 +16,7 @@ class CustomTableViewCell: UITableViewCell {
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var customSwitch: UISwitch!
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var customLable: UILabel!
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

@@ -43,7 +43,6 @@ extension TodoViewController : UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return todo_delete.count
         var count: Int = 0
         if section == 0 {
             count = todo[0].count
@@ -70,7 +69,9 @@ extension TodoViewController : UITableViewDelegate, UITableViewDataSource{
         }
         let delete = UIAlertAction(title: "삭제하기", style: .destructive) { [self]
             (delete) in
-            todoManager.todoDelete(self, index)
+            todo[section].remove(at: index)
+            SaveData()
+            tableView.reloadSections(IndexSet(section...section), with: .automatic)
         }
         let cancel = UIAlertAction(title: "취소", style: .cancel)
         alert.addAction(modify)
