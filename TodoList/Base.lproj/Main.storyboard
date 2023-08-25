@@ -227,8 +227,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cw-EP-UXZ">
-                                <rect key="frame" x="73" y="148" width="94" height="30"/>
+                                <rect key="frame" x="81" y="149" width="94" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="카테고리선택">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
@@ -294,6 +295,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oX-8J-bHm">
+                                <rect key="frame" x="81" y="210" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="카테고리선택">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="카테고리 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRP-HJ-g9O">
+                                <rect key="frame" x="16" y="217" width="57" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="89C-aJ-JfW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -313,6 +329,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="DetailView" destination="4l2-Ah-gy6" id="oo5-Tr-IAX"/>
+                        <outlet property="categoryButton" destination="7oX-8J-bHm" id="267-lo-heL"/>
                         <outlet property="customTextfield1" destination="pYG-WK-G8e" id="eLN-Xl-rnP"/>
                         <outlet property="customTextfield2" destination="QJd-br-x6Y" id="Qsm-pY-8W2"/>
                         <outlet property="saveButton" destination="RQL-71-Xsk" id="2J7-C8-ib5"/>
