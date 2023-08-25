@@ -15,7 +15,7 @@ let todoManager = TodoManager()
 
 func SaveData () {
     
-    UserDefaults.standard.set(try? PropertyListEncoder().encode(todo_delete), forKey: "todo")
+    UserDefaults.standard.set(try? PropertyListEncoder().encode(todo), forKey: "todo")
     UserDefaults.standard.set(try? PropertyListEncoder().encode(done), forKey: "done")
     print("데이터 저장")
     
@@ -23,7 +23,7 @@ func SaveData () {
 
 func LoadData () {
     if let data = UserDefaults.standard.value(forKey:"todo") as? Data {
-        todo_delete = try! PropertyListDecoder().decode([Todo].self, from: data)
+        todo = try! PropertyListDecoder().decode([[Todo]].self, from: data)
     }
     if let data = UserDefaults.standard.value(forKey:"done") as? Data {
         done = try! PropertyListDecoder().decode([Todo].self, from: data)

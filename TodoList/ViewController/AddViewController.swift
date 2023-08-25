@@ -27,6 +27,7 @@ class AddViewController: UIViewController {
             section = 3
         }
         todo[section].append(newTodo)
+        SaveData()
         self.navigationController?.popViewController(animated: true)
     }
     @objc func dateChange(_ sender : UIDatePicker) {

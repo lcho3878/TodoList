@@ -38,6 +38,7 @@ class DetailViewController : UIViewController {
         let confirm = UIAlertAction(title: "확인", style: .default) { (ok) in
             todo[self.section][self.index].content = self.customTextfield1.text!
             todo[self.section][self.index].dueDate = self.customTextfield2.text!
+            SaveData()
             self.navigationController?.popViewController(animated: true)
         }
         let cancel = UIAlertAction(title: "취소", style: .destructive, handler: nil)

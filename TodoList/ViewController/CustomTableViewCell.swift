@@ -66,5 +66,6 @@ class CustomTableViewCell: UITableViewCell {
             done.append(todo[section][index])
             todo[section].remove(at: index)
         }
+        SaveData()
     }
 }

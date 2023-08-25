@@ -20,6 +20,7 @@ class DoneViewController: UIViewController {
             let ok = UIAlertAction(title: "삭제", style: .destructive){
                 (ok) in
                 done.remove(at: index)
+                SaveData()
                 self.DoneView.reloadSections(IndexSet(0...0), with: .automatic)
             }
             let cancel = UIAlertAction(title: "취소", style: .default)
