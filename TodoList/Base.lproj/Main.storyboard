@@ -219,6 +219,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="카테고리 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7Z-MO-Uqt">
+                                <rect key="frame" x="16" y="156" width="57" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cw-EP-UXZ">
+                                <rect key="frame" x="73" y="148" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="카테고리선택">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xnb-tq-IEL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -237,13 +251,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="categoryButton" destination="4cw-EP-UXZ" id="jKi-pb-sGz"/>
                         <outlet property="customLabel1" destination="YcF-NL-nM4" id="uka-TR-78w"/>
                         <outlet property="customLable2" destination="cMf-yK-cHS" id="hau-OY-3fl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="42t-T9-F7f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1190.0763358778624" y="-924.64788732394368"/>
+            <point key="canvasLocation" x="1185.4961832061069" y="-924.64788732394368"/>
         </scene>
         <!--상세화면-->
         <scene sceneID="Hwu-Yb-qsE">
@@ -407,6 +422,9 @@
     </scenes>
     <resources>
         <image name="instruction" width="741" height="410"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
