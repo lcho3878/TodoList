@@ -9,12 +9,10 @@ import UIKit
 
 class AddViewController: UIViewController {
     
-    @IBOutlet weak var category: UITextField!
     @IBOutlet weak var customLabel1: UITextField!
     @IBOutlet weak var customLable2: UITextField!
     @IBAction func saveButton(_ sender: Any) {
-//        todo_delete.append(Todo(category: "공부", content: customLabel1.text!, dueDate : customLable2.text, isComplete: false))
-        let newTodo = Todo(category: category.text!, content: customLabel1.text!, dueDate : customLable2.text, isComplete: false)
+        let newTodo = Todo(category: "공부", content: customLabel1.text!, dueDate : customLable2.text, isComplete: false)
         let section: Int
         switch newTodo.category {
         case "공부":
