@@ -58,14 +58,18 @@ class AddViewController: UIViewController {
         categoryButton.menu = menu
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func SetupDatePicker () {
         let datepicker = UIDatePicker()
         datepicker.datePickerMode = .date
         datepicker.preferredDatePickerStyle = .wheels
         datepicker.addTarget(self, action: #selector(dateChange), for: .valueChanged)
         customLable2.text = Date().toString()
         customLable2.inputView = datepicker
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        SetupDatePicker()
         SetupCategoryMenu()
     }
 }

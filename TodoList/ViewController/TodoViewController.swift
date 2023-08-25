@@ -28,38 +28,19 @@ extension TodoViewController : UITableViewDelegate, UITableViewDataSource{
         return todo.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let title: String
-        if section == 0 {
-            title = "공부"
-        }
-        else if section == 1 {
-            title = "프로젝트"
-        }
-        else if section == 2 {
-            title = "일상"
-        }
-        else {
-            title = "기타"
-        }
-        return title
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return todo[section].count
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var count: Int = 0
-        if section == 0 {
-            count = todo[0].count
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0: return "공부"
+        case 1: return "프로젝트"
+        case 2: return "일상"
+        case 3: return "기타"
+        default:
+            return "오류"
         }
-        else if section == 1 {
-            count = todo[1].count
-        }
-        else if section == 2 {
-            count = todo[2].count
-        }
-        else if section == 3 {
-            count = todo[3].count
-        }
-        return count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath : IndexPath){

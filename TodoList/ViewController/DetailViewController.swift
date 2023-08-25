@@ -41,19 +41,21 @@ class DetailViewController : UIViewController {
         categoryButton.menu = menu
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        category = todo[section][index].category
-        categoryButton.setTitle(category, for: .normal)
-        SetupCategoryMenu()
-        customTextfield1.text = todo[section][index].content
-        customTextfield2.text = todo[section][index].dueDate
+    func SetupDatePicker () {
         let datepicker = UIDatePicker()
         datepicker.datePickerMode = .date
         datepicker.preferredDatePickerStyle = .wheels
         datepicker.addTarget(self, action: #selector(dateChange), for: .valueChanged)
         customTextfield2.inputView = datepicker
-        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        category = todo[section][index].category
+        customTextfield1.text = todo[section][index].content
+        customTextfield2.text = todo[section][index].dueDate
+        SetupCategoryMenu()
+        SetupDatePicker()
     }
     
     @objc func dateChange (_ sender : UIDatePicker) {
@@ -64,13 +66,13 @@ class DetailViewController : UIViewController {
         let alert = UIAlertController(title: nil, message: "수정하시겠습니까?" , preferredStyle: .alert)
         let confirm = UIAlertAction(title: "확인", style: .default) { (ok) in
             var newSection: Int
-            
             switch self.category {
             case "공부": newSection = 0
             case "프로젝트": newSection = 1
             case "일상": newSection = 2
             default: newSection = 3
             }
+            todo[self.section][self.index].category = self.category!
             todo[self.section][self.index].content = self.customTextfield1.text!
             todo[self.section][self.index].dueDate = self.customTextfield2.text!
             if self.section != newSection {
@@ -81,6 +83,7 @@ class DetailViewController : UIViewController {
             SaveData()
             self.navigationController?.popViewController(animated: true)
         }
+        
         let cancel = UIAlertAction(title: "취소", style: .destructive, handler: nil)
         alert.addAction(confirm)
         alert.addAction(cancel)

@@ -18,10 +18,8 @@ class MainViewController: UIViewController {
         present(score.showScore(), animated: true)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        LoadData()
-        //네트워크 이미지 로드
+    //네트워크 이미지 로드
+    func NewworkImageLoad () {
         let imageUrl = "https://spartacodingclub.kr/css/images/scc-og.jpg"
         AF.request(imageUrl).response { response in
             switch response.result {
@@ -33,7 +31,12 @@ class MainViewController: UIViewController {
                 print("이미지 로드 실패 : \(error)")
             }
         }
-        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        LoadData()
+        NewworkImageLoad()
     }
     
 }

@@ -8,8 +8,8 @@
 import UIKit
 
 class DoneViewController: UIViewController {
-    var count = 0
-    var index = -1
+    var count = 0 // 이스터에그 발동을 위한 프로퍼티
+    var index = -1 // 이스터에그 발동을 위한 프로퍼티
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var DoneView: UITableView!
     
