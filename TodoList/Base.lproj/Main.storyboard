@@ -81,12 +81,25 @@
                                     <action selector="scoreButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MhN-2M-kzD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGu-el-vRr">
+                                <rect key="frame" x="121.66666666666669" y="714" width="150" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="psE-CP-14p"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="랜덤 고양이사진"/>
+                                <connections>
+                                    <segue destination="zCy-Ny-iYh" kind="show" id="34D-aU-WX1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="YvX-Ze-5qL" firstAttribute="top" secondItem="ikh-tQ-TcW" secondAttribute="bottom" constant="20" id="4Nl-Vw-t22"/>
                             <constraint firstItem="ikh-tQ-TcW" firstAttribute="top" secondItem="zJX-4Z-TWp" secondAttribute="bottom" constant="20" id="8mh-R1-LXQ"/>
+                            <constraint firstItem="DGu-el-vRr" firstAttribute="top" secondItem="5yw-Z8-ASz" secondAttribute="bottom" constant="20" id="C9T-TJ-xgn"/>
+                            <constraint firstItem="DGu-el-vRr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="EbX-5E-ski"/>
                             <constraint firstItem="5yw-Z8-ASz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="FaU-3Y-wES"/>
                             <constraint firstItem="ikh-tQ-TcW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JCV-Cd-q7e"/>
                             <constraint firstItem="Swg-rv-tVh" firstAttribute="top" secondItem="YvX-Ze-5qL" secondAttribute="bottom" constant="20" id="OSq-ev-nsH"/>
@@ -413,6 +426,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BGV-f1-UiR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="243.51145038167937" y="136.61971830985917"/>
+        </scene>
+        <!--Pet View Controller-->
+        <scene sceneID="5Hq-nR-nFz">
+            <objects>
+                <viewController id="zCy-Ny-iYh" customClass="PetViewController" customModule="TodoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NeX-aC-PrT">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8dt-hZ-UfP">
+                                <rect key="frame" x="20" y="103" width="353" height="415"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7l1-ue-0Z3">
+                                <rect key="frame" x="121" y="538" width="151" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="고양이 사진 바꾸기"/>
+                                <connections>
+                                    <action selector="showCatButton:" destination="zCy-Ny-iYh" eventType="touchUpInside" id="mbn-tw-8co"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="o5T-9V-fHG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="o5T-9V-fHG" firstAttribute="bottom" secondItem="8dt-hZ-UfP" secondAttribute="bottom" constant="300" id="3lx-dB-rtL"/>
+                            <constraint firstItem="8dt-hZ-UfP" firstAttribute="top" secondItem="o5T-9V-fHG" secondAttribute="top" id="Y5Q-j5-g4q"/>
+                            <constraint firstItem="7l1-ue-0Z3" firstAttribute="centerX" secondItem="o5T-9V-fHG" secondAttribute="centerX" id="ZcY-4p-Ydv"/>
+                            <constraint firstItem="o5T-9V-fHG" firstAttribute="trailing" secondItem="8dt-hZ-UfP" secondAttribute="trailing" constant="20" id="meD-CE-G20"/>
+                            <constraint firstItem="8dt-hZ-UfP" firstAttribute="leading" secondItem="o5T-9V-fHG" secondAttribute="leading" constant="20" id="sq0-kp-s8f"/>
+                            <constraint firstItem="7l1-ue-0Z3" firstAttribute="top" secondItem="8dt-hZ-UfP" secondAttribute="bottom" constant="20" id="wsN-ZP-Vds"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="CAr-ej-4x4"/>
+                    <connections>
+                        <outlet property="petImageView" destination="8dt-hZ-UfP" id="ADR-Ox-oof"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="guw-E8-MCe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-993.12977099236639" y="663.38028169014092"/>
         </scene>
         <!--사용 설명서-->
         <scene sceneID="gqC-I2-aye">

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		154774AC2A80DB7400D54393 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154774AB2A80DB7400D54393 /* DetailViewController.swift */; };
+		154FF9AB2A9C7E1000E02356 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 154FF9AA2A9C7E1000E02356 /* Alamofire */; };
 		15A133F02A835DFB0085811D /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A133EF2A835DFB0085811D /* Todo.swift */; };
 		15A133F32A839D540085811D /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A133F22A839D540085811D /* InstructionViewController.swift */; };
 		15A133F52A84F2AB0085811D /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A133F42A84F2AB0085811D /* AddViewController.swift */; };
@@ -16,9 +17,9 @@
 		15A134002A85B94F0085811D /* TodoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A133FF2A85B94F0085811D /* TodoManager.swift */; };
 		15A134022A85B9570085811D /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A134012A85B9570085811D /* Score.swift */; };
 		15A134042A85B9900085811D /* Instances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A134032A85B9900085811D /* Instances.swift */; };
-		15B568772A9763A90051C27D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 15B568762A9763A80051C27D /* Alamofire */; };
 		15B5687D2A988A870051C27D /* CustomTalbeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B5687C2A988A870051C27D /* CustomTalbeViewCell.swift */; };
 		15B568802A988B040051C27D /* DoneViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B5687F2A988B040051C27D /* DoneViewTableViewCell.swift */; };
+		15B568822A98B6A70051C27D /* PetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B568812A98B6A70051C27D /* PetViewController.swift */; };
 		15EFCAE22A7B869E00CF729D /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EFCAE12A7B869E00CF729D /* TodoViewController.swift */; };
 		15EFCAE62A7B883200CF729D /* DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EFCAE52A7B883200CF729D /* DoneViewController.swift */; };
 		15F204472A77C1F4001E9D58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F204462A77C1F4001E9D58 /* AppDelegate.swift */; };
@@ -41,6 +42,7 @@
 		15A134032A85B9900085811D /* Instances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instances.swift; sourceTree = "<group>"; };
 		15B5687C2A988A870051C27D /* CustomTalbeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTalbeViewCell.swift; sourceTree = "<group>"; };
 		15B5687F2A988B040051C27D /* DoneViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneViewTableViewCell.swift; sourceTree = "<group>"; };
+		15B568812A98B6A70051C27D /* PetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetViewController.swift; sourceTree = "<group>"; };
 		15EFCAE12A7B869E00CF729D /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		15EFCAE52A7B883200CF729D /* DoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneViewController.swift; sourceTree = "<group>"; };
 		15F204432A77C1F4001E9D58 /* TodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15B568772A9763A90051C27D /* Alamofire in Frameworks */,
+				154FF9AB2A9C7E1000E02356 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +76,7 @@
 				154774AB2A80DB7400D54393 /* DetailViewController.swift */,
 				15A133F22A839D540085811D /* InstructionViewController.swift */,
 				15A133F42A84F2AB0085811D /* AddViewController.swift */,
+				15B568812A98B6A70051C27D /* PetViewController.swift */,
 				15B5687E2A988AD50051C27D /* TableViewCell */,
 			);
 			path = ViewController;
@@ -157,7 +160,7 @@
 			);
 			name = TodoList;
 			packageProductDependencies = (
-				15B568762A9763A80051C27D /* Alamofire */,
+				154FF9AA2A9C7E1000E02356 /* Alamofire */,
 			);
 			productName = TodoList;
 			productReference = 15F204432A77C1F4001E9D58 /* TodoList.app */;
@@ -188,7 +191,7 @@
 			);
 			mainGroup = 15F2043A2A77C1F4001E9D58;
 			packageReferences = (
-				15B568752A9763A80051C27D /* XCRemoteSwiftPackageReference "Alamofire" */,
+				154FF9A92A9C7E1000E02356 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 15F204442A77C1F4001E9D58 /* Products */;
 			projectDirPath = "";
@@ -230,6 +233,7 @@
 				15B568802A988B040051C27D /* DoneViewTableViewCell.swift in Sources */,
 				15A133F02A835DFB0085811D /* Todo.swift in Sources */,
 				15A133FE2A85B8AC0085811D /* Date.swift in Sources */,
+				15B568822A98B6A70051C27D /* PetViewController.swift in Sources */,
 				15EFCAE62A7B883200CF729D /* DoneViewController.swift in Sources */,
 				15F204492A77C1F4001E9D58 /* SceneDelegate.swift in Sources */,
 				154774AC2A80DB7400D54393 /* DetailViewController.swift in Sources */,
@@ -386,6 +390,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -413,6 +418,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,7 +456,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		15B568752A9763A80051C27D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		154FF9A92A9C7E1000E02356 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -461,9 +467,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		15B568762A9763A80051C27D /* Alamofire */ = {
+		154FF9AA2A9C7E1000E02356 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 15B568752A9763A80051C27D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 154FF9A92A9C7E1000E02356 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
