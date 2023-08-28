@@ -17,6 +17,7 @@ struct Example: Decodable {
 
 class PetViewController: UIViewController {
 
+    @IBOutlet weak var loadingLabel: UILabel!
     @IBOutlet weak var petImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class PetViewController: UIViewController {
     
     func ShowCat() {
         print("작업시작")
+        self.loadingLabel.isHidden = false
         // 1. URL 생성
         let apiUrl = URL(string: "https://api.thecatapi.com/v1/images/search")
 
@@ -52,6 +54,7 @@ class PetViewController: UIViewController {
                     let imageData = try Data(contentsOf: imageURL!)
                     DispatchQueue.main.async {
                         self.petImageView.image = UIImage(data: imageData)
+                        self.loadingLabel.isHidden = true
                         print("작업완료")
                     }
                 }

@@ -446,6 +446,12 @@
                                     <action selector="showCatButton:" destination="zCy-Ny-iYh" eventType="touchUpInside" id="mbn-tw-8co"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로딩중입니다...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42k-p0-DsQ">
+                                <rect key="frame" x="143" y="300" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o5T-9V-fHG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -453,6 +459,8 @@
                             <constraint firstItem="o5T-9V-fHG" firstAttribute="bottom" secondItem="8dt-hZ-UfP" secondAttribute="bottom" constant="300" id="3lx-dB-rtL"/>
                             <constraint firstItem="8dt-hZ-UfP" firstAttribute="top" secondItem="o5T-9V-fHG" secondAttribute="top" id="Y5Q-j5-g4q"/>
                             <constraint firstItem="7l1-ue-0Z3" firstAttribute="centerX" secondItem="o5T-9V-fHG" secondAttribute="centerX" id="ZcY-4p-Ydv"/>
+                            <constraint firstItem="42k-p0-DsQ" firstAttribute="centerY" secondItem="8dt-hZ-UfP" secondAttribute="centerY" id="bzH-wz-qdF"/>
+                            <constraint firstItem="42k-p0-DsQ" firstAttribute="centerX" secondItem="8dt-hZ-UfP" secondAttribute="centerX" id="lbU-Yh-AoS"/>
                             <constraint firstItem="o5T-9V-fHG" firstAttribute="trailing" secondItem="8dt-hZ-UfP" secondAttribute="trailing" constant="20" id="meD-CE-G20"/>
                             <constraint firstItem="8dt-hZ-UfP" firstAttribute="leading" secondItem="o5T-9V-fHG" secondAttribute="leading" constant="20" id="sq0-kp-s8f"/>
                             <constraint firstItem="7l1-ue-0Z3" firstAttribute="top" secondItem="8dt-hZ-UfP" secondAttribute="bottom" constant="20" id="wsN-ZP-Vds"/>
@@ -460,6 +468,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="CAr-ej-4x4"/>
                     <connections>
+                        <outlet property="loadingLabel" destination="42k-p0-DsQ" id="4sf-l2-l0c"/>
                         <outlet property="petImageView" destination="8dt-hZ-UfP" id="ADR-Ox-oof"/>
                     </connections>
                 </viewController>
