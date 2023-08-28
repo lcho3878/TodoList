@@ -16,21 +16,25 @@ struct Example: Decodable {
 }
 
 class PetViewController: UIViewController {
-
+    var imageData: Data?
     @IBOutlet weak var loadingLabel: UILabel!
     @IBOutlet weak var petImageView: UIImageView!
+    @IBAction func showCatButton(_ sender: Any) {
+        ShowCat()
+    }
+    
+    @IBAction func saveCatButton(_ sender: Any) {
+        catImageDatas.append(imageData!)
+        SaveData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ShowCat()
     }
     
-    @IBAction func showCatButton(_ sender: Any) {
-        ShowCat()
-    }
-    
-    
     func ShowCat() {
-        print("작업시작")
+        print("로딩중")
         self.loadingLabel.isHidden = false
         // 1. URL 생성
         let apiUrl = URL(string: "https://api.thecatapi.com/v1/images/search")
@@ -54,8 +58,9 @@ class PetViewController: UIViewController {
                     let imageData = try Data(contentsOf: imageURL!)
                     DispatchQueue.main.async {
                         self.petImageView.image = UIImage(data: imageData)
+                        self.imageData = imageData
                         self.loadingLabel.isHidden = true
-                        print("작업완료")
+                        print("로딩완료")
                     }
                 }
 //                  AF를 이용한 방법

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		154774AC2A80DB7400D54393 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154774AB2A80DB7400D54393 /* DetailViewController.swift */; };
 		154FF9AB2A9C7E1000E02356 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 154FF9AA2A9C7E1000E02356 /* Alamofire */; };
+		154FF9B02A9CAD4300E02356 /* CatCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154FF9AF2A9CAD4300E02356 /* CatCollectionViewController.swift */; };
+		154FF9B22A9CAD9400E02356 /* CatCollectionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154FF9B12A9CAD9400E02356 /* CatCollectionViewController.storyboard */; };
+		154FF9B52A9CB2C200E02356 /* CatVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154FF9B42A9CB2C200E02356 /* CatVCollectionViewCell.swift */; };
+		154FF9B72A9CB8D300E02356 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154FF9B62A9CB8D300E02356 /* UIImage.swift */; };
 		15A133F02A835DFB0085811D /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A133EF2A835DFB0085811D /* Todo.swift */; };
 		15A133F32A839D540085811D /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A133F22A839D540085811D /* InstructionViewController.swift */; };
 		15A133F52A84F2AB0085811D /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A133F42A84F2AB0085811D /* AddViewController.swift */; };
@@ -32,6 +36,10 @@
 
 /* Begin PBXFileReference section */
 		154774AB2A80DB7400D54393 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		154FF9AF2A9CAD4300E02356 /* CatCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCollectionViewController.swift; sourceTree = "<group>"; };
+		154FF9B12A9CAD9400E02356 /* CatCollectionViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CatCollectionViewController.storyboard; sourceTree = "<group>"; };
+		154FF9B42A9CB2C200E02356 /* CatVCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatVCollectionViewCell.swift; sourceTree = "<group>"; };
+		154FF9B62A9CB8D300E02356 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		15A133EF2A835DFB0085811D /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		15A133F22A839D540085811D /* InstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		15A133F42A84F2AB0085811D /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		154FF9B32A9CB28400E02356 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				154FF9B42A9CB2C200E02356 /* CatVCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		15A133F12A835E110085811D /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,7 +93,9 @@
 				15A133F22A839D540085811D /* InstructionViewController.swift */,
 				15A133F42A84F2AB0085811D /* AddViewController.swift */,
 				15B568812A98B6A70051C27D /* PetViewController.swift */,
+				154FF9AF2A9CAD4300E02356 /* CatCollectionViewController.swift */,
 				15B5687E2A988AD50051C27D /* TableViewCell */,
+				154FF9B32A9CB28400E02356 /* CollectionViewCell */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -87,6 +105,7 @@
 			children = (
 				15A133FB2A85B8900085811D /* String.swift */,
 				15A133FD2A85B8AC0085811D /* Date.swift */,
+				154FF9B62A9CB8D300E02356 /* UIImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -137,6 +156,7 @@
 				15A133F12A835E110085811D /* ViewController */,
 				15F2044C2A77C1F4001E9D58 /* Main.storyboard */,
 				15F2044F2A77C1F5001E9D58 /* Assets.xcassets */,
+				154FF9B12A9CAD9400E02356 /* CatCollectionViewController.storyboard */,
 				15F204512A77C1F5001E9D58 /* LaunchScreen.storyboard */,
 				15F204542A77C1F5001E9D58 /* Info.plist */,
 			);
@@ -207,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				154FF9B22A9CAD9400E02356 /* CatCollectionViewController.storyboard in Resources */,
 				15F204532A77C1F5001E9D58 /* LaunchScreen.storyboard in Resources */,
 				15F204502A77C1F5001E9D58 /* Assets.xcassets in Resources */,
 				15F2044E2A77C1F4001E9D58 /* Main.storyboard in Resources */,
@@ -220,6 +241,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				154FF9B52A9CB2C200E02356 /* CatVCollectionViewCell.swift in Sources */,
+				154FF9B72A9CB8D300E02356 /* UIImage.swift in Sources */,
 				15B5687D2A988A870051C27D /* CustomTalbeViewCell.swift in Sources */,
 				15A134022A85B9570085811D /* Score.swift in Sources */,
 				15A133F52A84F2AB0085811D /* AddViewController.swift in Sources */,
@@ -235,6 +258,7 @@
 				15A133FE2A85B8AC0085811D /* Date.swift in Sources */,
 				15B568822A98B6A70051C27D /* PetViewController.swift in Sources */,
 				15EFCAE62A7B883200CF729D /* DoneViewController.swift in Sources */,
+				154FF9B02A9CAD4300E02356 /* CatCollectionViewController.swift in Sources */,
 				15F204492A77C1F4001E9D58 /* SceneDelegate.swift in Sources */,
 				154774AC2A80DB7400D54393 /* DetailViewController.swift in Sources */,
 			);

@@ -34,81 +34,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikh-tQ-TcW">
-                                <rect key="frame" x="121.66666666666669" y="497" width="150" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="obS-YR-8Ct"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="해야할 일 보기"/>
-                                <connections>
-                                    <segue destination="BpD-rW-Xh2" kind="show" id="TbC-eZ-cMh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvX-Ze-5qL">
-                                <rect key="frame" x="121.66666666666669" y="552" width="150" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="Flw-Z5-iww"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="완료한 일 보기"/>
-                                <connections>
-                                    <segue destination="7K5-S8-Qft" kind="show" id="EFx-8P-rPt"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zJX-4Z-TWp">
-                                <rect key="frame" x="35" y="115" width="322" height="358"/>
+                                <rect key="frame" x="35" y="115" width="322" height="279"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Swg-rv-tVh">
-                                <rect key="frame" x="121.66666666666669" y="607" width="150" height="35"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="OkO-Co-1zK">
+                                <rect key="frame" x="96.666666666666686" y="423" width="200" height="291"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikh-tQ-TcW">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="해야할 일 보기"/>
+                                        <connections>
+                                            <segue destination="BpD-rW-Xh2" kind="show" id="TbC-eZ-cMh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvX-Ze-5qL">
+                                        <rect key="frame" x="0.0" y="51.333333333333343" width="200" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="완료한 일 보기"/>
+                                        <connections>
+                                            <segue destination="7K5-S8-Qft" kind="show" id="EFx-8P-rPt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yw-Z8-ASz">
+                                        <rect key="frame" x="0.0" y="102.66666666666666" width="200" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="내 점수 확인하기"/>
+                                        <connections>
+                                            <action selector="scoreButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MhN-2M-kzD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGu-el-vRr">
+                                        <rect key="frame" x="0.0" y="154" width="200" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="랜덤 고양이사진"/>
+                                        <connections>
+                                            <segue destination="zCy-Ny-iYh" kind="show" id="34D-aU-WX1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvy-ki-85j">
+                                        <rect key="frame" x="0.0" y="205.33333333333331" width="200" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="내 고양이 사진모음"/>
+                                        <connections>
+                                            <segue destination="4sS-s8-eMQ" kind="show" id="3C8-pG-Te6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Swg-rv-tVh">
+                                        <rect key="frame" x="0.0" y="256.66666666666669" width="200" height="34.333333333333314"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="사용 설명서"/>
+                                        <connections>
+                                            <segue destination="yJR-8T-MxP" kind="show" id="4lJ-V2-MLN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="Wro-b0-46o"/>
+                                    <constraint firstAttribute="width" constant="200" id="bmC-uu-JMv"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="사용 설명서"/>
-                                <connections>
-                                    <segue destination="yJR-8T-MxP" kind="show" id="4lJ-V2-MLN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yw-Z8-ASz">
-                                <rect key="frame" x="121.66666666666669" y="658" width="150" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="oHv-Yx-GLH"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="내 점수 확인하기"/>
-                                <connections>
-                                    <action selector="scoreButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MhN-2M-kzD"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGu-el-vRr">
-                                <rect key="frame" x="121.66666666666669" y="714" width="150" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="psE-CP-14p"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="랜덤 고양이사진"/>
-                                <connections>
-                                    <segue destination="zCy-Ny-iYh" kind="show" id="34D-aU-WX1"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="YvX-Ze-5qL" firstAttribute="top" secondItem="ikh-tQ-TcW" secondAttribute="bottom" constant="20" id="4Nl-Vw-t22"/>
-                            <constraint firstItem="ikh-tQ-TcW" firstAttribute="top" secondItem="zJX-4Z-TWp" secondAttribute="bottom" constant="20" id="8mh-R1-LXQ"/>
-                            <constraint firstItem="DGu-el-vRr" firstAttribute="top" secondItem="5yw-Z8-ASz" secondAttribute="bottom" constant="20" id="C9T-TJ-xgn"/>
-                            <constraint firstItem="DGu-el-vRr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="EbX-5E-ski"/>
-                            <constraint firstItem="5yw-Z8-ASz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="FaU-3Y-wES"/>
-                            <constraint firstItem="ikh-tQ-TcW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JCV-Cd-q7e"/>
-                            <constraint firstItem="Swg-rv-tVh" firstAttribute="top" secondItem="YvX-Ze-5qL" secondAttribute="bottom" constant="20" id="OSq-ev-nsH"/>
                             <constraint firstItem="zJX-4Z-TWp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="PBQ-0E-5AD"/>
-                            <constraint firstItem="Swg-rv-tVh" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="YKM-Yo-Yl1"/>
+                            <constraint firstItem="OkO-Co-1zK" firstAttribute="top" secondItem="zJX-4Z-TWp" secondAttribute="bottom" constant="20" id="aWn-2A-jLH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zJX-4Z-TWp" secondAttribute="trailing" constant="36" id="b3e-aO-cB5"/>
-                            <constraint firstItem="5yw-Z8-ASz" firstAttribute="top" secondItem="Swg-rv-tVh" secondAttribute="bottom" constant="20" id="gqB-hB-Ai3"/>
+                            <constraint firstItem="OkO-Co-1zK" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gZZ-mj-Il3"/>
                             <constraint firstItem="zJX-4Z-TWp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="wG2-tL-tpI"/>
-                            <constraint firstItem="YvX-Ze-5qL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="z0q-pW-HzK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VNk-4S-u4E"/>
@@ -196,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bEh-rQ-M7K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="243.51145038167937" y="-539.43661971830988"/>
+            <point key="canvasLocation" x="244" y="-1121"/>
         </scene>
         <!--새 할일 추가-->
         <scene sceneID="Jkg-hQ-6Ne">
@@ -272,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="42t-T9-F7f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1185.4961832061069" y="-924.64788732394368"/>
+            <point key="canvasLocation" x="1178" y="-1503"/>
         </scene>
         <!--상세화면-->
         <scene sceneID="Hwu-Yb-qsE">
@@ -350,7 +343,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xKa-6X-YaY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1177.8625954198474" y="-269.01408450704224"/>
+            <point key="canvasLocation" x="1178" y="-825"/>
         </scene>
         <!--완료 목록-->
         <scene sceneID="y6B-Sx-hnV">
@@ -425,7 +418,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BGV-f1-UiR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="243.51145038167937" y="136.61971830985917"/>
+            <point key="canvasLocation" x="244" y="-432"/>
         </scene>
         <!--Pet View Controller-->
         <scene sceneID="5Hq-nR-nFz">
@@ -443,20 +436,29 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="고양이 사진 바꾸기"/>
                                 <connections>
-                                    <action selector="showCatButton:" destination="zCy-Ny-iYh" eventType="touchUpInside" id="mbn-tw-8co"/>
+                                    <action selector="showCatButton:" destination="zCy-Ny-iYh" eventType="touchUpInside" id="Foc-6a-8oC"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로딩중입니다...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42k-p0-DsQ">
-                                <rect key="frame" x="143" y="300" width="107" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="로딩중입니다...." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42k-p0-DsQ">
+                                <rect key="frame" x="105" y="265" width="182" height="91"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cac-6n-i8w">
+                                <rect key="frame" x="113.66666666666669" y="593" width="166" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="고양이 사진 저장하기"/>
+                                <connections>
+                                    <action selector="saveCatButton:" destination="zCy-Ny-iYh" eventType="touchUpInside" id="c7a-ky-ddm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="o5T-9V-fHG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="o5T-9V-fHG" firstAttribute="bottom" secondItem="8dt-hZ-UfP" secondAttribute="bottom" constant="300" id="3lx-dB-rtL"/>
+                            <constraint firstItem="cac-6n-i8w" firstAttribute="top" secondItem="7l1-ue-0Z3" secondAttribute="bottom" constant="20" id="BUI-il-97B"/>
                             <constraint firstItem="8dt-hZ-UfP" firstAttribute="top" secondItem="o5T-9V-fHG" secondAttribute="top" id="Y5Q-j5-g4q"/>
                             <constraint firstItem="7l1-ue-0Z3" firstAttribute="centerX" secondItem="o5T-9V-fHG" secondAttribute="centerX" id="ZcY-4p-Ydv"/>
                             <constraint firstItem="42k-p0-DsQ" firstAttribute="centerY" secondItem="8dt-hZ-UfP" secondAttribute="centerY" id="bzH-wz-qdF"/>
@@ -464,6 +466,7 @@
                             <constraint firstItem="o5T-9V-fHG" firstAttribute="trailing" secondItem="8dt-hZ-UfP" secondAttribute="trailing" constant="20" id="meD-CE-G20"/>
                             <constraint firstItem="8dt-hZ-UfP" firstAttribute="leading" secondItem="o5T-9V-fHG" secondAttribute="leading" constant="20" id="sq0-kp-s8f"/>
                             <constraint firstItem="7l1-ue-0Z3" firstAttribute="top" secondItem="8dt-hZ-UfP" secondAttribute="bottom" constant="20" id="wsN-ZP-Vds"/>
+                            <constraint firstItem="cac-6n-i8w" firstAttribute="centerX" secondItem="o5T-9V-fHG" secondAttribute="centerX" id="ym6-aD-CD0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CAr-ej-4x4"/>
@@ -474,7 +477,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guw-E8-MCe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-993.12977099236639" y="663.38028169014092"/>
+            <point key="canvasLocation" x="244" y="236"/>
+        </scene>
+        <!--CatCollectionViewController-->
+        <scene sceneID="VEG-j4-Duc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CatCollectionViewController" id="4sS-s8-eMQ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="3VS-Lh-UEc"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q1O-Ur-0H8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1125" y="410"/>
         </scene>
         <!--사용 설명서-->
         <scene sceneID="gqC-I2-aye">
@@ -496,7 +509,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfD-uu-UkH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="248.09160305343511" y="800.70422535211276"/>
+            <point key="canvasLocation" x="-602" y="748"/>
         </scene>
     </scenes>
     <resources>
