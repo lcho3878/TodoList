@@ -64,3 +64,21 @@ UiKit 를 이용한 Todolist 어플리케이션
 ## 💥 트러블 슈팅
 - 기존 Todo Class의 프로퍼티로 UiSwitch를 사용하였으나, TableView의 Sectiond을 reload하는 과정에서 무한 로딩이 발생하여,
 UiSwitch프로퍼티를 Bool 타입인 isComplete으로 변경한 뒤, UiSwitch의 on/off 여부를 isComplete를 이용하는 방향으로 변경하여 해결
+
+<br><br>
+
+## MVC 
+Model <-> Controller <-> View
+<br>
+
+Model -> Controller : Todo정보
+<br>
+
+Controller -> Model : Todo정보 수정 및 업데이트
+<br>
+
+Controller -> View : Todo정보 출력
+<br>
+
+View -> Controller : 완료여부 체크
+
