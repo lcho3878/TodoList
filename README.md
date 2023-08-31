@@ -69,9 +69,16 @@ UiSwitch프로퍼티를 Bool 타입인 isComplete으로 변경한 뒤, UiSwitch�
 
 ## MVC 
 Model <-> Controller <-> View
+<br>
 
-Model -> Controller : Todo정보, 
+Model -> Controller : Todo정보
+<br>
+
 Controller -> Model : Todo정보 수정 및 업데이트
+<br>
+
 Controller -> View : Todo정보 출력
+<br>
+
 View -> Controller : 완료여부 체크
 
