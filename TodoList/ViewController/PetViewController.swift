@@ -35,6 +35,7 @@ class PetViewController: UIViewController {
     
     func ShowCat() {
         print("로딩중")
+        self.petImageView.isHidden = true
         self.loadingLabel.isHidden = false
         // 1. URL 생성
         let apiUrl = URL(string: "https://api.thecatapi.com/v1/images/search")
@@ -60,20 +61,22 @@ class PetViewController: UIViewController {
                         self.petImageView.image = UIImage(data: imageData)
                         self.imageData = imageData
                         self.loadingLabel.isHidden = true
+                        self.petImageView.isHidden = false
                         print("로딩완료")
                     }
-                }
-//                  AF를 이용한 방법
-//                    AF.request(imageURL).response { response in
+//                    AF를 이용한 방법
+//                    AF.request(imageURL!).response { response in
 //                        switch response.result {
 //                        case .success(let data):
 //                            DispatchQueue.main.async{
 //                                self.petImageView.image = UIImage(data: data!)
+//                                self.loadingLabel.is
 //                            }
 //                        case .failure(let error):
 //                            print("이미지 로드 실패 : \(error)")
 //                        }
 //                    }
+                }
                 
                 catch let error {
                     print(error)

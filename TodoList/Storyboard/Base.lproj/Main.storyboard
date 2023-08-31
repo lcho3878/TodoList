@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="igc-Ca-XmG">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="JcH-ff-p4k">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="igc-Ca-XmG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ij1-NR-DKn">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="m46-jf-gdO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xpc-FJ-KjP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1416" y="-11"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="TodoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zJX-4Z-TWp">
+                                <rect key="frame" x="35" y="115" width="322" height="279"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="OkO-Co-1zK">
+                                <rect key="frame" x="96.666666666666686" y="423" width="200" height="291"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ikh-tQ-TcW">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="해야할 일 보기"/>
+                                        <connections>
+                                            <segue destination="LVr-Fy-Z12" kind="show" id="Ygu-zC-hzZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvX-Ze-5qL">
+                                        <rect key="frame" x="0.0" y="51.333333333333343" width="200" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="완료한 일 보기"/>
+                                        <connections>
+                                            <segue destination="ABR-U1-HVd" kind="show" id="Jhh-QQ-9D8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yw-Z8-ASz">
+                                        <rect key="frame" x="0.0" y="102.66666666666666" width="200" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="내 점수 확인하기"/>
+                                        <connections>
+                                            <action selector="scoreButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MhN-2M-kzD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGu-el-vRr">
+                                        <rect key="frame" x="0.0" y="154" width="200" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="랜덤 고양이사진"/>
+                                        <connections>
+                                            <segue destination="VBT-q6-lvc" kind="show" id="xQ4-t1-qpX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvy-ki-85j">
+                                        <rect key="frame" x="0.0" y="205.33333333333331" width="200" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="내 고양이 사진모음"/>
+                                        <connections>
+                                            <segue destination="4sS-s8-eMQ" kind="show" id="3C8-pG-Te6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Swg-rv-tVh">
+                                        <rect key="frame" x="0.0" y="256.66666666666669" width="200" height="34.333333333333314"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="사용 설명서"/>
+                                        <connections>
+                                            <segue destination="6Bj-Mz-oos" kind="show" id="sLv-Xn-u3T"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="bmC-uu-JMv"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zJX-4Z-TWp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="PBQ-0E-5AD"/>
+                            <constraint firstItem="OkO-Co-1zK" firstAttribute="top" secondItem="zJX-4Z-TWp" secondAttribute="bottom" constant="20" id="aWn-2A-jLH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zJX-4Z-TWp" secondAttribute="trailing" constant="36" id="b3e-aO-cB5"/>
+                            <constraint firstItem="OkO-Co-1zK" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gZZ-mj-Il3"/>
+                            <constraint firstItem="zJX-4Z-TWp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="wG2-tL-tpI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VNk-4S-u4E"/>
+                    <connections>
+                        <outlet property="imageView" destination="zJX-4Z-TWp" id="Zhs-kx-zsv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-602.29007633587787" y="-2.1126760563380285"/>
+        </scene>
+        <!--TodoViewController-->
+        <scene sceneID="jdx-SH-MVf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TodoViewController" id="LVr-Fy-Z12" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="rYM-VQ-ari"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uOZ-7m-b1I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="346" y="-71"/>
+        </scene>
+        <!--DoneViewController-->
+        <scene sceneID="GBB-Mk-CNv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DoneViewController" id="ABR-U1-HVd" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="bLm-bj-b1a"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yXU-oq-rjG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="347" y="-35"/>
+        </scene>
+        <!--PetViewController-->
+        <scene sceneID="Wes-F1-ahT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PetViewController" id="VBT-q6-lvc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5OR-UA-rsM"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yTQ-kR-mNC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="345" y="6"/>
+        </scene>
+        <!--InstructionViewController-->
+        <scene sceneID="lSJ-AE-dfT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="InstructionViewController" id="6Bj-Mz-oos" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Uxp-Ns-h8f"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aIG-gF-lqi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="357" y="99"/>
+        </scene>
+        <!--CatCollectionViewController-->
+        <scene sceneID="VEG-j4-Duc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CatCollectionViewController" id="4sS-s8-eMQ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="3VS-Lh-UEc"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q1O-Ur-0H8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="371" y="55"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

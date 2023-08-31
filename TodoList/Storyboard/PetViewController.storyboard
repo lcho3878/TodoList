@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eoc-7I-vqR">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pet View Controller-->
+        <scene sceneID="zsY-hT-IQ5">
+            <objects>
+                <viewController id="eoc-7I-vqR" customClass="PetViewController" customModule="TodoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ajk-Qs-PnM">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IoH-TO-nTU">
+                                <rect key="frame" x="20" y="59" width="353" height="459"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQx-rU-29p">
+                                <rect key="frame" x="121" y="538" width="151" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="고양이 사진 바꾸기"/>
+                                <connections>
+                                    <action selector="showCatButton:" destination="eoc-7I-vqR" eventType="touchUpInside" id="wr3-jb-tv1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="로딩중입니다...." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFK-1B-AGT">
+                                <rect key="frame" x="105" y="265" width="182" height="91"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOF-aI-hiF">
+                                <rect key="frame" x="113.66666666666669" y="593" width="166" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="고양이 사진 저장하기"/>
+                                <connections>
+                                    <action selector="saveCatButton:" destination="eoc-7I-vqR" eventType="touchUpInside" id="0aA-tT-ThR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="etk-P9-V90"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="etk-P9-V90" firstAttribute="bottom" secondItem="IoH-TO-nTU" secondAttribute="bottom" constant="300" id="7DW-QH-X94"/>
+                            <constraint firstItem="MOF-aI-hiF" firstAttribute="centerX" secondItem="etk-P9-V90" secondAttribute="centerX" id="LlN-AL-KmU"/>
+                            <constraint firstItem="hFK-1B-AGT" firstAttribute="centerX" secondItem="IoH-TO-nTU" secondAttribute="centerX" id="MpR-NH-Ywr"/>
+                            <constraint firstItem="IoH-TO-nTU" firstAttribute="top" secondItem="etk-P9-V90" secondAttribute="top" id="Ng4-uy-aAY"/>
+                            <constraint firstItem="etk-P9-V90" firstAttribute="trailing" secondItem="IoH-TO-nTU" secondAttribute="trailing" constant="20" id="PHK-fj-yRG"/>
+                            <constraint firstItem="MOF-aI-hiF" firstAttribute="top" secondItem="RQx-rU-29p" secondAttribute="bottom" constant="20" id="STL-FQ-tPo"/>
+                            <constraint firstItem="hFK-1B-AGT" firstAttribute="centerY" secondItem="IoH-TO-nTU" secondAttribute="centerY" id="bX2-4V-8dZ"/>
+                            <constraint firstItem="IoH-TO-nTU" firstAttribute="leading" secondItem="etk-P9-V90" secondAttribute="leading" constant="20" id="flO-yp-Cof"/>
+                            <constraint firstItem="RQx-rU-29p" firstAttribute="centerX" secondItem="etk-P9-V90" secondAttribute="centerX" id="igI-hn-rb6"/>
+                            <constraint firstItem="RQx-rU-29p" firstAttribute="top" secondItem="IoH-TO-nTU" secondAttribute="bottom" constant="20" id="sQp-4v-mRm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7s9-ho-aDc"/>
+                    <connections>
+                        <outlet property="loadingLabel" destination="hFK-1B-AGT" id="Aci-6e-1tz"/>
+                        <outlet property="petImageView" destination="IoH-TO-nTU" id="j1v-Zd-yE9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PIr-5u-NQp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="274" y="-4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
